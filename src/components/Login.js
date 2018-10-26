@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-
+import axios from 'axios';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class Login extends Component {
 
@@ -38,32 +39,27 @@ class Login extends Component {
     
   render() {
     return (
-      <div>
-        <form>
-          <div className="form-group">
-            <input
-              type="email"
-              placeholder="Email"
-              className="form-control"
-              name="email"
-              onKeyUp={ e => this.setEmail(e.target.value)}
-            />
-            </div>
-            <div className="form-group">
-              <input
-                type="password"
-                placeholder="Password"
-                className="form-control"
-                name="password"
-                onKeyUp={e => this.setPassword(e.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <button onClick={() => {this.login(this.state.email, this.state.password)}} className="btn btn-primary">
-                Login
-              </button>
-            </div>
-        </form>
+      <div className='form-authorization'>
+        <div>
+          <TextField
+            id="standard-dense"
+            label="Email"
+            fullWidth="true"
+            onKeyUp={(e) => this.setEmail(e.target.value)}
+          />
+        </div>
+        <div>
+          <TextField
+            id="standard-dense"
+            label="Password"
+            type = "password"
+            fullWidth="true"
+            onKeyUp={(e) => this.setPassword(e.target.value)}
+          />
+        </div>
+        <Button onClick={() => {this.login(this.state.email, this.state.password)}} color="primary" size="large">
+          Login
+        </Button>
       </div>
     );
   }

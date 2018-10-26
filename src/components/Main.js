@@ -7,9 +7,9 @@ import Register from './Registration';
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path='/' component={Home}/>
-      <Route path='/login' component={Login}/>
-      <Route path='/registration' component={Register}/>
+      <Route exact path='/' component={Home} />
+      <Route path='/login' component={Login} />
+      <Route path='/registration' component={Register} />
     </Switch>
   </main>
 )
