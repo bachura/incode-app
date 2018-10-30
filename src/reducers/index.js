@@ -1,6 +1,10 @@
-// import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
+import { rootReducer } from './root';
+import { loginReducer } from './login';
+import { registerReducer } from './registration';
 
-
-// export default combineReducers({
-  
-// });
+export const appReducer = combineReducers({
+  root: rootReducer,
+  login: loginReducer,
+  register: registerReducer
+})
