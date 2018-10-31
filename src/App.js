@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 
 class App extends React.Component {
     componentDidMount(){
-        this.props.getUser();
+      this.props.getUser();
     }
 
   render() {
@@ -29,12 +29,12 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   getUser,
-  logout: () =>  dispatch(logout())
+  logout: () => dispatch(logout())
 });
 
 export default withRouter (
   connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App),
+    mapStateToProps,
+    mapDispatchToProps
+  )(App),
 );

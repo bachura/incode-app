@@ -14,13 +14,13 @@ export const getUser = () => {
         .then((response) => {
             dispatch({
                 type: GET_USER_SUCCESS,
-                payload: response.data.user,
+                payload: response.data.user
              })
          })
         .catch(()=> {
              dispatch({
                 type: GET_USER_FAIL,
-                payload: 'Oooops...',
+                payload: 'Oooops...'
              })
         }) 
     }

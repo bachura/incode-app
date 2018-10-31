@@ -33,7 +33,15 @@ import {
           ...state,
           isValid: false,
           isSubmitting: true
-      }
+        }
+
+      case LOGOUT:
+        return {
+          ...state,
+          isValid: false,
+          isSubmitting: false,
+          hasChanges:   true
+        }
   
       default:
         return state

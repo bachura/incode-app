@@ -1,10 +1,14 @@
 import { combineReducers } from 'redux';
-import { rootReducer } from './root';
+import { getUserReducer } from './root';
 import { loginReducer } from './login';
 import { registerReducer } from './registration';
+import { postReducer } from './post';
+import { categoryReducer } from './category'
 
 export const appReducer = combineReducers({
-  root: rootReducer,
+  root: getUserReducer,
   login: loginReducer,
-  register: registerReducer
+  register: registerReducer,
+  post: postReducer,
+  category: categoryReducer
 })

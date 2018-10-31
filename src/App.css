@@ -1,5 +1,8 @@
 .App {
+  max-width: 1440px;
+  width: auto;
   margin: 0 auto;
+  padding: 0 15px;
   text-align: center;
 }
 
@@ -58,4 +61,33 @@ main form {
 }
 .form-authorization div {
   margin: 5px 0;
+}
+
+.category-wrap {
+  box-sizing: border-box;
+  padding: 0 15px 0 0;
+  float: left;
+  width: 30%;
+}
+.category-wrap .category-btn {
+  margin-bottom: 10px;
+  background: #eee;
+  border-radius: 0;
+}
+
+.post-wrap {
+  box-sizing: border-box;
+  padding: 0 0 0 15px;
+  float: left;
+  width: 70%;
+}
+.post-wrap h2 {
+  margin: 5px;
+}
+.post-wrap .post-body {
+  text-align: left;
+}
+.post-wrap .post-btn {
+  background: #eee;
+  text-align: left;
 }

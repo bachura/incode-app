@@ -15,7 +15,7 @@ const initialState = {
     loading: false
 };
 
-export function rootReducer(state = initialState, action) {
+export function getUserReducer(state = initialState, action) {
     switch (action.type) {
         case GET_USER_REQUEST:
 
