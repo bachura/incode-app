@@ -16,15 +16,14 @@ import * as serviceWorker from './serviceWorker';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(appReducer, composeEnhancers(
-    applyMiddleware(thunk)
+	applyMiddleware(thunk)
 ));
 
 ReactDOM.render(
-
-    <Provider store = {store}>
-        <Router history={appHistory}>
-            <App />
-        </Router> 
-    </Provider> ,document.getElementById("root")
+	<Provider store = {store}>
+		<Router history={appHistory}>
+			<App />
+		</Router> 
+	</Provider> ,document.getElementById("root")
 );
 serviceWorker.unregister();

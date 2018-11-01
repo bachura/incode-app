@@ -14,10 +14,10 @@ export const getCategory = () => {
   axios.get('/category')
     .then((response) => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
-      dispatch({
-        type: GET_CATEGORY_SUCCESS,
-        payload: response.data.categories
-      })
+        dispatch({
+          type: GET_CATEGORY_SUCCESS,
+          payload: response.data.categories
+        })
     }) 
     .catch((error) => {
       dispatch({

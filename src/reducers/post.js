@@ -17,15 +17,15 @@ export function postReducer(state = initialState, action) {
   switch (action.type) {  
     case GET_POST_REQUEST:
       return {
-          ...state,
-          isLoading: true
+        ...state,
+        isLoading: true
       }
 
     case GET_POST_SUCCESS:
       return {
-          ...state,
-          isLoading: false,
-          posts : action.payload
+        ...state,
+        isLoading: false,
+        posts : action.payload
       }
 
     case GET_POST_ERROR:
@@ -36,16 +36,16 @@ export function postReducer(state = initialState, action) {
     }
 
     case GET_POST_BY_CATEGORY_REQUEST:
-    return {
+      return {
         ...state,
         isLoading: true
-    }
+      }
 
     case GET_POST_BY_CATEGORY_SUCCESS:
       return {
-          ...state,
-          isLoading: false,
-          posts : action.payload
+        ...state,
+        isLoading: false,
+        posts : action.payload
       }
 
     case GET_POST_BY_CATEGORY_ERROR:

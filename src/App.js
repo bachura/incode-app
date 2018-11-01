@@ -9,16 +9,22 @@ import { connect } from 'react-redux';
 
 class App extends React.Component {
     componentDidMount(){
-      this.props.getUser();
+      if (!this.props.loaded) {
+        this.props.getUser();
+      }
     }
 
   render() {
-    return (
-      <div className="App">
-        <Header loggedIn={this.props.loggedIn} handleLogout={this.props.logout}/>
-        <Main/>
-      </div>
-    );
+    if (this.props.loaded) {
+      return (
+        <div className="App">
+          <Header loggedIn={this.props.loggedIn} handleLogout={this.props.logout}/>
+          <Main/>
+        </div>
+      );
+    } else {
+      return null
+    }
   }
 }
 
