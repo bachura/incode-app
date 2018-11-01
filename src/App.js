@@ -28,9 +28,10 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  getUser,
+  getUser: () => dispatch(getUser()),
   logout: () => dispatch(logout())
 });
+
 
 export default withRouter (
   connect(
