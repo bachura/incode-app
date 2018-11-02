@@ -8,6 +8,10 @@ export const GET_POST_BY_CATEGORY_REQUEST = 'GET_POST_BY_CATEGORY_REQUEST'
 export const GET_POST_BY_CATEGORY_SUCCESS = 'GET_POST_BY_CATEGORY_SUCCESS'
 export const GET_POST_BY_CATEGORY_ERROR = 'GET_POST_BY_CATEGORY_ERROR'
 
+export const GET_POST_BY_AUTHOR_REQUEST = 'GET_POST_BY_AUTHOR_REQUEST'
+export const GET_POST_BY_AUTHOR_SUCCESS = 'GET_POST_BY_AUTHOR_SUCCESS'
+export const GET_POST_BY_AUTHOR_ERROR = 'GET_POST_BY_AUTHOR_ERROR'
+
 export const getPost = () => {       
   return (dispatch) => {
 
@@ -52,6 +56,31 @@ export const getCategoryByTitle = (title) => {
       dispatch({
         type: GET_POST_BY_CATEGORY_ERROR,
         payload: 'There is not a single category'
+      })
+    })         
+  }
+}
+
+
+export const getPostByAuthor = (author_id) => {
+  return (dispatch) => {
+
+  dispatch({
+    type: GET_POST_BY_AUTHOR_REQUEST
+  });
+
+  axios.get(`/post/category/${author_id}`)
+    .then((response) => {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
+      dispatch({
+        type: GET_POST_BY_AUTHOR_SUCCESS,
+        payload: response.data.posts
+      })
+    }) 
+    .catch((error) => {
+      dispatch({
+        type: GET_POST_BY_AUTHOR_ERROR,
+        payload: 'There is not a main posts'
       })
     })         
   }

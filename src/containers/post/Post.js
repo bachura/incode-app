@@ -25,7 +25,7 @@ class Post extends Component {
             <div key={post.id}>
               <ExpansionPanel>
                 <ExpansionPanelSummary className="post-btn">
-                  <Typography><h2>{post.title}</h2></Typography>
+                  <Typography>{post.title}</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography className="post-body">

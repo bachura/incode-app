@@ -25,6 +25,7 @@ const Header = ({loggedIn, handleLogout}) =>  {
             <header>
               <ul>
                 <li><Link to='/home'>Home</Link></li>
+                <li><Link to='/mypage'>My page</Link></li>
                 <li><Link to='/login' onClick={() => handleLogout()}>Logout</Link></li>
               </ul>
             </header>
